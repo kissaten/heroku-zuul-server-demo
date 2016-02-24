@@ -1,15 +1,21 @@
 zuul:
   routes:
-    get:
-      path: /get/**
-      url: http://httpbin.org/get
-    links:
-      path: /links/**
-      url: http://httpbin.org/links
-    images:
-      path: /image/**
-      url: http://httpbin.org/image
+    my-service:
+      path: /my-service/**
+      serviceId: my-service
 
 eureka:
   client:
-    enabled: false
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://user:password@localhost:5000}/eureka/
+      security:
+        user:
+          password: ${eureka.password}
+
+---
+spring:
+  eureka:
+    instance:
+      hostname: ${DOMAIN_NAME}
+      nonSecurePort: 80
+    password: ${EUREKA_USER_PASSWORD:password}
