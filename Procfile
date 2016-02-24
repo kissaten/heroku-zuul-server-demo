@@ -1,1 +1,1 @@
-web: java -jar target/zuul-server-*.jar --server.port $PORT
+web: java -jar target/zuul-server-*.jar --server.port=$PORT
