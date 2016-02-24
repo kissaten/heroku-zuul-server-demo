@@ -1,5 +1,8 @@
 zuul:
   routes:
+    links:
+      path: /**
+      url: http://httpbin.org/links
     images:
       path: /image/**
       url: http://httpbin.org/image
