@@ -7,18 +7,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 
-/**
- * @author Spencer Gibb
- */
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
 @Controller
 @EnableZuulProxy
 public class ZuulServerApplication {
-	
-    public static void main(String[] args) {
-        new SpringApplicationBuilder(ZuulServerApplication.class).web(true).run(args);
-    }
-
+  public static void main(String[] args) {
+    new SpringApplicationBuilder(ZuulServerApplication.class).web(true).run(args);
+  }
 }
