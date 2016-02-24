@@ -1,0 +1,9 @@
+zuul:
+  routes:
+    images:
+      path: /image/**
+      url: http://httpbin.org/image
+
+eureka:
+  client:
+    enabled: false
