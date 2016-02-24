@@ -1,7 +1,10 @@
 zuul:
   routes:
+    get:
+      path: /get/**
+      url: http://httpbin.org/get
     links:
-      path: /**
+      path: /links/**
       url: http://httpbin.org/links
     images:
       path: /image/**
